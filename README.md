@@ -37,18 +37,18 @@ c. From cars 6 to 10, display only the columns Model, mpg, cyl, hp, and gear, in
 
 **CODE**
 ```
-import pandas as pd
+import pandas as pd //this syntax downloads the library "pandas" as pd
 
-cars = pd.read_csv('cars (1).csv')
-cars
+cars = pd.read_csv('cars (1).csv') // the code recognizes "cars" as the dataframe of the csv file
+cars // typing car displays the dataframe
 
 print("Shape of cars:", cars.shape)
 print("Column names:", cars.columns.tolist())
 
-cars_6_to_10 = cars.iloc[5:10]
+cars_6_to_10 = cars.iloc[5:10] // selects rows 6 to 10 from the data frame
 cars_6_to_10
 
-result = cars_6_to_10[['Model', 'mpg', 'cyl', 'hp', 'gear']]
+result = cars_6_to_10[['Model', 'mpg', 'cyl', 'hp', 'gear']] // this then sorts the selected rows, leaving only the given labels
 result
 ```
 
@@ -77,10 +77,10 @@ Store the two results in toyota and pontiac, respectively. Do not use a hard-cod
 
 **CODE**
 ```
-toyota = cars[cars['Model'] == 'Toyota Corolla']
+toyota = cars[cars['Model'] == 'Toyota Corolla'] sets a variable for a given row in a data set.
 toyota
 
-pontiac = cars[cars['Model']=='Pontiac Firebird'][['Model', 'mpg', 'hp', 'wt']]
+pontiac = cars[cars['Model']=='Pontiac Firebird'][['Model', 'mpg', 'hp', 'wt']] // the same case as the variable "toyota", specific labels are used to filter out the row.
 pontiac
 ```
 
@@ -105,7 +105,7 @@ rather than by row numbers. Display selected cars and its shape.
 **CODE**
 ```
 selected_cars = cars[(cars['Model'] == 'Datsun 710') | (cars['Model'] == 'Lotus Europa') | (cars['Model'] == 'Ferrari Dino')]
-[['Model', 'mpg', 'cyl', 'hp', 'gear']]
+[['Model', 'mpg', 'cyl', 'hp', 'gear']] // assigns different rows of car models to a single variable
 
 selected_cars
 
